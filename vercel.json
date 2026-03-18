@@ -16,17 +16,15 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "api/index.py"
-    }
-  ],
-  "routes": [
-    {
-      "handle": "filesystem"
+      "destination": "/api/index.py"
     },
     {
-      "src": "/(.*)",
-      "status": 200,
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/frontend/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/frontend/index.html"
     }
   ]
 }
